@@ -1,0 +1,10 @@
+{
+	"name":"Serial",
+	"main":"./index.html",
+	"icon":"icon.png",
+	"icon_color":"white",
+	"version":"0.0.0",
+	"author":"Jonathan Ward + Brian Owen",
+	"website":"http://github.com/FabMo/",
+	"description":"text engraving"
+}

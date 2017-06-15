@@ -1,0 +1,177 @@
+
+#paper{
+	position: fixed;
+	background:#fff;
+	border-radius: 20px;
+	top: 50px;
+	left: 20px;
+}
+
+#paper2{
+	position: fixed;
+	/*background:#00ff00;*/
+	top: 110px;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%)
+
+}
+
+body{
+	background:#eee;
+	}
+
+#fontLoad{
+	bottom: 10px;
+	position: fixed;
+	}
+
+#fontSelect{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	position: fixed;
+	top:3px;
+	left: 20px;
+	height:35px;
+	width:100px;
+	background-color: #ddd;
+	border: solid 2px #eee;
+	overflow: hidden;
+	border-radius: 10px;
+	padding-left:10px;
+	padding-right:10px;
+	}
+
+#fontSelect:hover {
+	background-color: #fff;
+	}
+
+#size{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	position: fixed;
+	top: 3px;
+	left: 130px;
+	height:30px;
+	width:45px;
+	background-color: #ddd;
+	border: solid 2px #eee;
+	border-radius: 10px;
+	padding-left:10px;
+	}
+
+#size:hover {
+	background-color: #fff;
+	}
+
+#toggle{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	position: fixed;
+	top: 3px;
+	left: 230px;
+	height:35px;
+	background-color: #ddd;
+	border: solid 2px #eee;
+	border-radius: 10px;
+	padding-left:10px;
+	padding-right:10px;
+	display:none;
+	}
+
+#toggle:hover {
+	background-color: #fff;
+	}
+
+#space{
+	position: fixed;
+	left: 30%;
+	bottom: 10px;
+	height:35px;
+	width:30%;
+	background-color: #ddd;
+   border-radius: 10px;
+	border: solid 2px #eee;
+}
+
+#space:hover {
+	background-color: #fff;
+	}
+
+#space:active {
+	background-color: #ccc;
+	}
+
+#enter{
+	position: fixed;
+	right: 10px;
+	bottom: 250px;
+	height:70px;
+	width:90px;
+   border-radius: 10px;
+	background-color: #ddd;
+	border: solid 2px #eee;
+	}
+
+#enter:hover {
+	background-color: #fff;
+	}
+
+#enter:active {
+	background-color: #ccc;
+	}
+
+#submit{
+	position: fixed;
+	right: 10px;
+	bottom: 100px;
+	height:80px;
+	background-color: #ddd;
+   border-radius: 10px;
+	border: solid 2px #eee;
+	}
+
+#submit:hover {
+	background-color: #fff;
+	}
+
+#submit:active {
+	background-color: #ccc;
+	}
+
+#backspace{
+	position: fixed;
+	right: 10px;
+	top: 10px;
+	width: 65px;
+	height:35px;
+	background-color: #ddd;
+   border-radius: 10px;
+	border: solid 2px #eee;
+	}
+
+#backspace:hover {
+	background-color: #fff;
+	}
+
+#backspace:active {
+	background-color: #ccc;
+	}
+
+.trash-icon{
+	height: 35px;
+	widows: 35px;
+	position: fixed;
+	right:35px;
+	bottom: 0px;
+	padding-left: 1em;
+	padding-bottom: 1em;
+	}
+
+.trash-icon:hover{
+	color:red
+	}
+

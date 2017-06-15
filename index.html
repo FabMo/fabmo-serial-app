@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HERSHEY FONTS</title>
+	</head>
+
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/libs/jquery.js"></script>
+	<script src="js/libs/fabmo.min.js"></script>
+	<script src="js/make.js"></script>
+	<script src="js/draw.js"></script>
+	<script src="js/loadfont.js"></script>
+	<script src="js/hershey.js"></script>
+
+	<body onload="makeChar(); draw(); fontChange();">
+
+	<select id="fontSelect" onchange="fontChange()" autocomplet="off">
+		<option value='hershey/astrology.jhf'>astrology</option>
+		<option value='hershey/cursive.jhf'>cursive</option>
+		<option value='hershey/cyrilc_1.jhf'>cyrilc_1</option>
+		<option value='hershey/cyrillic.jhf'>cyrillic</option>
+		<option value='hershey/futural.jhf'>futural</option>
+		<option value='hershey/futuram.jhf'>futuram</option>
+		<option value='hershey/gothgbt.jhf'>gothgbt</option>
+		<option value='hershey/gothgrt.jhf'>gothgrt</option>
+		<option value='hershey/gothiceng.jhf'>gothiceng</option>
+		<option value='hershey/gothicger.jhf'>gothicger</option>
+		<option value='hershey/gothicita.jhf'>gothicita</option>
+		<option value='hershey/gothitt.jhf'>gothitt</option>
+		<option value='hershey/greek.jhf'>greek</option>
+		<option value='hershey/greekc.jhf'>greekc</option>
+		<option value='hershey/greeks.jhf'>greeks</option>
+		<option value='hershey/hershey.jhf'>hershey</option>
+		<option value='hershey/japanese.jhf'>japanese</option>
+		<option value='hershey/markers.jhf'>markers</option>
+		<option value='hershey/mathlow.jhf'>mathlow</option>
+		<option value='hershey/mathupp.jhf'>mathupp</option>
+		<option value='hershey/meteorology.jhf'>meteorology</option>
+		<option value='hershey/minimal.jhf' selected>minimal</option>
+		<option value='hershey/music.jhf'>music</option>
+		<option value='hershey/rowmand.jhf'>rowmand</option>
+		<option value='hershey/rowmans.jhf'>rowmans</option>
+		<option value='hershey/rowmant.jhf'>rowmant</option>
+		<option value='hershey/scriptc.jhf'>scriptc</option>
+		<option value='hershey/scripts.jhf'>scripts</option>
+		<option value='hershey/symbolic.jhf'>symbolic</option>
+		<option value='hershey/timesg.jhf'>timesi</option>
+		<option value='hershey/timesib.jhf'>timesib</option>
+		<option value='hershey/timesr.jhf'>timesr</option>
+		<option value='hershey/timesrb.jhf'>timesrb</option>
+	</select>	
+
+	<input id="fontLoad" type="file" onchange="startRead()">
+
+	<input id="size" type="number" value="0.3" step="0.1" min="0.2">
+	<input id="space" type="submit" value="Space" onclick="space()">
+	<input id="enter" type="submit" value="&#9166;" onclick="enter()">
+	<input id="submit" type="submit" value="SUBMIT&#x00A;JOB" onclick="make()">
+	<input id="backspace" type="submit" value="&#8678;" onclick="backspace()">
+
+	<select id="toggle" onchange="modeChange()" autocomplet="off">
+		<option value='-1' selected>demo</option>
+		<option value='1'>string</option>
+		<option value='0'>type</option>
+	</select>	
+
+
+	<img class="trash-icon" src="trash.png">
+
+	<canvas id="myCanvas"></canvas>
+	<canvas id="paper"></canvas>
+	<canvas id="paper2"></canvas>
+        
+	</body>
+
+<script>
+
+//TODO
+//
+//mode toggle
+//
+
+var fabmo = new FabMoDashboard()
+
+$("#myCanvas").on('mousemove', function(e) {
+	mouseX= (e.clientX-(10))
+	mouseY= (e.clientY-(10))+(Math.max(document.documentElement.scrollTop,document.body.scrollTop))
+	draw()
+})
+
+$("#myCanvas").on('mousedown', function(e) {
+	//e.preventDefault()
+	mouseDown = true
+	draw()
+})
+
+$("#myCanvas").on('mouseup', function(e) {
+	//e.preventDefault()
+	mouseDown = false
+	draw()
+	if(selected!=-1){
+		if (mode==1){
+			displayTxt(path[selected])
+		}
+		else if (mode==2){
+			displayTag(path[selected])
+		}
+		else{
+			makeSBP(path[selected])
+		}
+		selected = -1
+	}
+})
+
+$('.trash-icon').click(function(){
+	display = []
+	screenY=(70*displayScale)
+	draw()
+})
+
+$(document).keydown(function(e){
+	e.preventDefault()
+
+	if(document.getElementById("fontSelect").value=='hershey/minimal.jhf'){
+		if((e.which >= 65)&&(e.which <= 90)&&(e.shiftKey)){
+			displayTag(path[((e.which-65)*2)])
+		}
+		else if((e.which >= 65)&&(e.which <= 90)){
+			displayTag(path[(((e.which-65)*2)+1)])			
+		}
+		else if((e.which >= 48)&&(e.which <= 57)){
+			if((e.which===50)&&(e.shiftKey)){
+				displayTag(path[62])				
+			}
+			else{
+				displayTag(path[(e.which-48)+52])
+			}					
+		}
+		else if(e.which === 13){
+			enter()			
+		}
+		else if(e.which === 8){
+			backspace()			
+		}
+		else if(e.which === 32){
+			space()			
+		}
+		else if(e.which === 46){
+			display = []
+			draw()			
+		}
+		else if(e.which === 190){
+			displayTag(path[66])			
+		}
+		else if(e.which === 191){
+			displayTag(path[63])			
+		}
+		else if(e.which === 173){
+			displayTag(path[64])			
+		}
+		else if(e.which === 188){
+			displayTag(path[65])			
+		}
+	}
+
+})
+
+</script>
+
+</html>
+
+
