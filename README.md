@@ -1,6 +1,4 @@
-## Hershey
-Hershey is a text engraving APP for ShopBot Tools!
-
-[gofabmo.org/fabmo-hershey-app](http://gofabmo.org/fabmo-hershey-app/)
+## Serial
+Serial is a text engraving APP for ShopBot Tools! Based on Jonathan Ward's Hershey App
 
 [shopbottools.com](http://shopbottools.com)
