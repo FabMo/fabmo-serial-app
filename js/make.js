@@ -16,7 +16,7 @@
 
 			lineX += parseFloat(((Math.abs(g[0][0].L))*0.0394*sf).toFixed(4))
 
-				SBP+="MS," + 0.4 + "," + 0.2 + "\n"
+				SBP+="MS," + 50 + "," + 20 + "\n"
 				SBP+="JZ,0.5\n"
 				SBP+="JX," + (lineX) + "\n"
 				SBP+="SO,1,1\n"
@@ -40,7 +40,7 @@
 			}
 			else if(mode == 1){
 
-				SBP+="MS," + 0.4 + "," + 0.2 + "\n"
+				SBP+="MS," + 50 + "," + 20 + "\n"
 				SBP+="JZ,0.5\n"
 				SBP+="SO,1,1\n"
 				SBP+="PAUSE 1\n" 
@@ -88,11 +88,11 @@
 
 			else if(mode == 2){
 
-				scale=3
+				scale=1.5
 				cutDepth=-0.025
 
 				SBP+="VD,1,3,1\n"
-				SBP+="MS," + 3 + "," + 3 + "\n"
+				SBP+="MS," + 50 + "," + 20 + "\n"
 				SBP+="JZ,3\n"
 				SBP+="SO,1,1\n"
 				SBP+="PAUSE 1\n"

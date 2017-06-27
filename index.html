@@ -12,6 +12,7 @@
 	<script src="js/draw.js"></script>
 	<script src="js/loadfont.js"></script>
 	<script src="js/hershey.js"></script>
+	<script src="js/util.js"></script>
 
 	<body onload="makeChar(); draw(); fontChange();">
 
@@ -38,6 +39,7 @@
 		<option value='hershey/mathupp.jhf'>mathupp</option>
 		<option value='hershey/meteorology.jhf'>meteorology</option>
 		<option value='hershey/minimal.jhf' selected>minimal</option>
+		<option value='hershey/minimallc.jhf'>minimallc</option>
 		<option value='hershey/music.jhf'>music</option>
 		<option value='hershey/rowmand.jhf'>rowmand</option>
 		<option value='hershey/rowmans.jhf'>rowmans</option>
@@ -54,10 +56,14 @@
 	<input id="fontLoad" type="file" onchange="startRead()">
 
 	<input id="size" type="number" value="0.3" step="0.1" min="0.2">
-	<input id="space" type="submit" value="Space" onclick="space()">
-	<input id="enter" type="submit" value="&#9166;" onclick="enter()">
-	<input id="submit" type="submit" value="SUBMIT&#x00A;JOB" onclick="make()">
-	<input id="backspace" type="submit" value="&#8678;" onclick="backspace()">
+	<input id="space" type="submit" value="SPACE" onclick="space()">
+	<input id="enter" type="submit" value="RETURN" onclick="enter()">
+	<button id="submit" type="submit" onclick="make()">SUBMIT<br>JOB</button>
+	<input id="backspace" type="submit" value="BACKSPACE" onclick="backspace()">
+	<button id="homez" type="submit" onclick="homez()">MEASURE<br>CUTTER</button>
+	<button id="homexy" type="submit" onclick="homexy()">HOME<br>TOOL</button>
+	<button id="allcaps" type="submit" onclick="allcaps()">ALL<br>CAPS</button>
+	
 
 	<select id="toggle" onchange="modeChange()" autocomplet="off">
 		<option value='-1' selected>demo</option>

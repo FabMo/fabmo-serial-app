@@ -103,7 +103,7 @@ function draw(){
 	c = document.getElementById("myCanvas")
 	ctx = c.getContext("2d")
 
-	ctx.canvas.width = $(window).innerWidth()-70
+	ctx.canvas.width = $(window).innerWidth()*0.85
 
 	var ymax = Math.round((Math.ceil((path.length*70)/ctx.canvas.width )*70))
 
@@ -111,7 +111,7 @@ function draw(){
 		ctx.canvas.height = ymax+screenY+140
 	}
 	else{
-		ctx.canvas.height = $(window).innerHeight()-70
+		ctx.canvas.height = $(window).innerHeight()*0.85
 	}
 	
 	ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height)
@@ -277,6 +277,7 @@ function demo(){
 		ctx3.lineTo((tagCutout[i].X*tagScale+(ctx3.canvas.width/2)),tagCutout[i].Y*tagScale+(ctx3.canvas.height/2))
 	}
 	ctx3.moveTo(ctx3.canvas.width/2+36*tagScale,ctx3.canvas.height/2)
+	//ctx3.arc(ctx3.canvas.width/2+tagHole.X*tagScale,(tagHole.Y+4)*tagScale,tagHole.R*tagScale,0,2*Math.PI)
 	ctx3.fill()
 	ctx3.stroke()
 
@@ -372,4 +373,3 @@ function backspace(){
 	}
 
 }
-

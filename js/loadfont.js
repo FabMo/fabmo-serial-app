@@ -46,3 +46,23 @@ function errorHandler(e)
 		console.log("Error reading file...")
   }
 }
+function allcaps(){
+	if(document.getElementById("fontSelect").value=='hershey/minimallc.jhf'){
+			document.getElementById("fontSelect").value='hershey/minimal.jhf';
+	} else {
+		document.getElementById("fontSelect").value='hershey/minimallc.jhf';
+	}
+	var file = document.getElementById('fontLoad').files[0];
+	if(file){
+		getAsText(file)    
+	}
+	hershey = document.getElementById("fontSelect").value 
+
+	jQuery.get(hershey, function(data) {
+		fileString = data
+	})
+	.done(function() {
+		parseFont()
+	})
+	
+}

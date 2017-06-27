@@ -12,12 +12,22 @@
 	/*background:#00ff00;*/
 	top: 110px;
 	left: 50%;
+	height:150px;
+	width:400px;
 	margin-right: -50%;
-	transform: translate(-50%, -50%)
+	transform: translate(-50%, -50%);
 
 }
 
-body{
+#mycanvas{
+	position: fixed;
+	left:3%;
+	bottom:15%;
+	height:60%;
+	width:60%;
+}
+
+#body{
 	background:#eee;
 	}
 
@@ -88,10 +98,10 @@ body{
 
 #space{
 	position: fixed;
-	left: 30%;
-	bottom: 10px;
-	height:35px;
-	width:30%;
+	left: 32%;
+	bottom: 3%;
+	height:10%;
+	width:19.5%;
 	background-color: #ddd;
    border-radius: 10px;
 	border: solid 2px #eee;
@@ -105,12 +115,49 @@ body{
 	background-color: #ccc;
 	}
 
+#homez{
+	position: fixed;
+	right: 3%;
+	bottom:42%;
+	height:24%;
+	width:11%;
+	border-radius:20px;
+	background-color: #FCD309;
+	border: solid 2px #0A0A0A;
+	}
+#homez:hover {
+	background-color: #fff;
+	}
+
+#homez:active {
+	background-color: #ccc;
+	}
+	
+#homexy{
+	position: fixed;
+	right: 3%;
+	bottom:71%;
+	height:24%;
+	width:11%;
+	border-radius:20px;
+	background-color: #FF6666;
+	border: solid 2px #0A0A0A;
+	}
+	
+#homexy:hover {
+	background-color: #fff;
+	}
+
+#homexy:active {
+	background-color: #ccc;
+	}
+	
 #enter{
 	position: fixed;
-	right: 10px;
-	bottom: 250px;
-	height:70px;
-	width:90px;
+	left: 20%;
+	bottom: 3%;
+	height:10%;
+	width:10%;
    border-radius: 10px;
 	background-color: #ddd;
 	border: solid 2px #eee;
@@ -123,15 +170,36 @@ body{
 #enter:active {
 	background-color: #ccc;
 	}
+	
+#allcaps{
+	position: fixed;
+	left: 3%;
+	bottom: 3%;
+	height: 10%;
+	width: 15%;
+	border-radius: 10px;
+	background-color: #ddd;
+	border: solid 2px #eee;
+	}
+	
+#allcaps:hover {
+	background-color: #fff;
+	}
+	
+#allcaps:active {
+	background-color: #ccc;
+	}
+	
 
 #submit{
 	position: fixed;
-	right: 10px;
-	bottom: 100px;
-	height:80px;
-	background-color: #ddd;
-   border-radius: 10px;
-	border: solid 2px #eee;
+	right: 3%;
+	bottom: 13%;
+	height:24%;
+	width:11%;
+	background-color: #68EC15;
+    border-radius: 20px;
+	border: solid 2px #0A0A0A;
 	}
 
 #submit:hover {
@@ -144,10 +212,10 @@ body{
 
 #backspace{
 	position: fixed;
-	right: 10px;
-	top: 10px;
-	width: 65px;
-	height:35px;
+	left: 53.5%;
+	bottom: 3%;
+	width: 10%;
+	height:10%;
 	background-color: #ddd;
    border-radius: 10px;
 	border: solid 2px #eee;
@@ -162,7 +230,7 @@ body{
 	}
 
 .trash-icon{
-	height: 35px;
+	height: 50px;
 	widows: 35px;
 	position: fixed;
 	right:35px;
